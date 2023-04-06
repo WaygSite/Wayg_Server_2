@@ -9,7 +9,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class WaygApplication implements WebMvcConfigurer {
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
-		registry.addMapping("/api/**").allowedOrigins("*");
+		registry.addMapping("/**")
+				.allowedOrigins("*").
+				allowedHeaders("*") // 어떤 헤더들을 허용할 것인지
+				.allowedMethods("*");
 	}
 
 	public static void main(String[] args) {

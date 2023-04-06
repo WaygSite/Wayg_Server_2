@@ -14,11 +14,11 @@ import java.util.List;
 
 @Controller
 @AllArgsConstructor
-@RequestMapping("")
+@CrossOrigin
+@RequestMapping("/wayg")
 public class WaygController {
     private final WaygService waygService;
 
-    @CrossOrigin(origins = "*", allowCredentials = "false")
     @GetMapping("/school/info")
     public ResponseEntity<List<School>> schoolInfo(){
         List<School> school = waygService.schoolInfo();
