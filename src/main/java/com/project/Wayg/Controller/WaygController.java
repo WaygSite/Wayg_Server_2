@@ -16,13 +16,14 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
+@RequestMapping("/wayg")
 public class WaygController {
     private final WaygService waygService;
 
     @GetMapping("/school/info")
-    public ResponseEntity<List<School>> schoolInfo(){
+    public List<School> schoolInfo(){
         List<School> school = waygService.schoolInfo();
-        return ResponseEntity.status(HttpStatus.OK).body(school);
+        return school;
     }
 }
