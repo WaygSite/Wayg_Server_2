@@ -29,6 +29,8 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
 	implementation('org.springframework.boot:spring-boot-starter-web')
+	testImplementation('org.springframework.security:spring-security-web')
+	implementation('org.mariadb.jdbc:mariadb-java-client:2.7.4')
 }
 
 tasks.named('test') {
