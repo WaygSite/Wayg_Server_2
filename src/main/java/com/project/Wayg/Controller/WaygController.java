@@ -17,20 +17,14 @@ public class WaygController {
 
     @CrossOrigin(origins = "*", allowedHeaders = "*", methods = {RequestMethod.GET})
     @GetMapping("/school/info")
-    public List<School> schoolInfo() {
+    public ResponseEntity<List<School>> schoolInfo() {
         List<School> school = waygService.schoolInfo();
-        return school;
+        return ResponseEntity.ok(school);
     }
 
     @CrossOrigin(origins = "*", allowedHeaders = "*", methods = RequestMethod.GET)
     @GetMapping("/")
     public ResponseEntity<String> test(){
         return ResponseEntity.ok("success");
-    }
-
-    @CrossOrigin(origins = "*", allowedHeaders = "*", methods = RequestMethod.GET)
-    @GetMapping("/hello")
-    public String helloTest(){
-        return "HELLO";
     }
 }
