@@ -5,6 +5,10 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
 
 
 @Entity
@@ -19,7 +23,9 @@ public class School {
     private String institution;
     private String gender;
     private String school_type;
+    private String school_name;
     private String address;
+    private LocalDate found_date;
     private String call_num;
     private String site;
 
