@@ -1,11 +1,11 @@
 package com.project.Wayg.Entity;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+
 
 @Entity
 @Getter
@@ -15,7 +15,7 @@ import javax.persistence.*;
 public class School {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
     private String institution;
     private String gender;
     private String school_type;
