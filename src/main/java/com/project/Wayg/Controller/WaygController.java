@@ -23,8 +23,8 @@ public class WaygController {
         return ResponseEntity.ok(school);
     }
 
-    @GetMapping("/school/search")
-    public ResponseEntity<List<School>> searchSchool(@RequestParam String keyword){
+    @RequestMapping(value="/school/search", method = {RequestMethod.POST, RequestMethod.GET})
+    public ResponseEntity<List<School>> postSearch(@RequestParam String keyword){
         List<School> search= waygService.searchSchool(keyword);
         return ResponseEntity.ok(search);
     }
