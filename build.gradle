@@ -51,7 +51,9 @@ dependencies {
 	implementation "com.querydsl:querydsl-jpa:${querydslVersion}"
 	implementation "com.querydsl:querydsl-apt:${querydslVersion}"
 
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
 
 }
 

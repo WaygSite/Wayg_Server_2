@@ -1,14 +1,14 @@
 package com.project.Wayg.Controller;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.project.Wayg.Entity.School;
 import com.project.Wayg.Service.WaygService;
-import lombok.AllArgsConstructor;
+import com.querydsl.jpa.impl.JPAQuery;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.stream.Stream;
 
 @RestController
 @RequiredArgsConstructor
@@ -23,10 +23,10 @@ public class WaygController {
         return ResponseEntity.ok(school);
     }
 
-    @GetMapping("/")
-    public ResponseEntity<String> test(){
-        return ResponseEntity.ok("success");
+    @GetMapping("/school/search")
+    public ResponseEntity<List<School>> searchSchool(@RequestParam String keyword){
+        List<School> search= waygService.searchSchool(keyword);
+        return ResponseEntity.ok(search);
     }
-
 
 }
