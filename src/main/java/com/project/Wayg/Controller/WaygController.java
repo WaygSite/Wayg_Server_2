@@ -29,17 +29,17 @@ public class WaygController {
 
     @RequestMapping(value="/school/search", method = {RequestMethod.POST, RequestMethod.GET})
     public ResponseEntity<Page<School>> searchSchool(@RequestParam RequestDTO keyword,
+                                                     @RequestParam(defaultValue = "0") String location,
                                                      @PageableDefault(size=12, direction = Sort.Direction.DESC) Pageable pageable){
-        Page<School> search= waygService.searchSchool(keyword, pageable);
+        Page<School> search= waygService.searchSchool(keyword, location, pageable);
         return ResponseEntity.ok(search);
     }
 
-    @RequestMapping(value="/school/category", method={RequestMethod.GET, RequestMethod.POST})
-    public ResponseEntity<Page<School>> categoryType(@RequestParam String category,
+    @RequestMapping(value="/school/location", method={RequestMethod.GET, RequestMethod.POST})
+    public ResponseEntity<Page<School>> locationSchool(@RequestParam String category,
                                                      @PageableDefault(size=12, direction = Sort.Direction.DESC) Pageable pageable){
-        Page<School> categoryType = waygService.categoryType(category, pageable);
+        Page<School> categoryType = waygService.locationSchool(category, pageable);
         return ResponseEntity.ok(categoryType);
-
     }
 
 }
