@@ -34,4 +34,12 @@ public class WaygController {
         return ResponseEntity.ok(search);
     }
 
+    @RequestMapping(value="/school/category", method={RequestMethod.GET, RequestMethod.POST})
+    public ResponseEntity<Page<School>> categoryType(@RequestParam String category,
+                                                     @PageableDefault(size=12, direction = Sort.Direction.DESC) Pageable pageable){
+        Page<School> categoryType = waygService.categoryType(category, pageable);
+        return ResponseEntity.ok(categoryType);
+
+    }
+
 }

@@ -38,5 +38,14 @@ public class WaygService {
     }
 
 
+    public Page<School> categoryType(String category, Pageable pageable) {
+        QSchool school = QSchool.school;
+        QueryResults cate =jpaQueryFactory.selectFrom(school)
+                .where(school.address.contains(category))
+                .offset(pageable.getOffset())   // (2) 페이지 번호
+                .limit(pageable.getPageSize())
+                .fetchResults();
 
+        return new PageImpl<>(cate.getResults());
+    }
 }
