@@ -13,9 +13,12 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.stereotype.Service;
 import org.springframework.data.domain.Pageable;
 
+import java.util.Map;
+
 @Service
 @AllArgsConstructor
 public class WaygService {
+    @Autowired
     private JPAQueryFactory jpaQueryFactory;
     private final WaygRepository waygRepository;
     public Page<School> schoolInfo(Pageable pageable) {
@@ -45,4 +48,5 @@ public class WaygService {
 
         return new PageImpl<>(loca.getResults());
     }
+
 }
