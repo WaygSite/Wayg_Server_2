@@ -1,9 +1,9 @@
-package com.project.Wayg.Service;
+package com.project.Wayg.service;
 
 import com.project.Wayg.Entity.QSchool;
 import com.project.Wayg.Entity.School;
 import com.project.Wayg.Entity.dto.RequestDTO;
-import com.project.Wayg.Repository.WaygRepository;
+import com.project.Wayg.repository.WaygRepository;
 import com.querydsl.core.QueryResults;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.AllArgsConstructor;
@@ -12,12 +12,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.stereotype.Service;
 import org.springframework.data.domain.Pageable;
-import java.util.List;
 
 @Service
 @AllArgsConstructor
 public class WaygService {
-    @Autowired
     private JPAQueryFactory jpaQueryFactory;
     private final WaygRepository waygRepository;
     public Page<School> schoolInfo(Pageable pageable) {
@@ -34,18 +32,17 @@ public class WaygService {
                                 .fetchResults();
 
         return new PageImpl<>(search.getResults());
-        //.stream().filter(s -> s.getSchool_name().equals(keyword));
     }
 
 
-    public Page<School> categoryType(String category, Pageable pageable) {
+    public Page<School> locationSchool(String location, Pageable pageable) {
         QSchool school = QSchool.school;
-        QueryResults cate =jpaQueryFactory.selectFrom(school)
-                .where(school.address.contains(category))
+        QueryResults loca =jpaQueryFactory.selectFrom(school)
+                .where(school.address.contains(location))
                 .offset(pageable.getOffset())   // (2) 페이지 번호
                 .limit(pageable.getPageSize())
                 .fetchResults();
 
-        return new PageImpl<>(cate.getResults());
+        return new PageImpl<>(loca.getResults());
     }
 }
