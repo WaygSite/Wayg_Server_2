@@ -13,6 +13,8 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.stereotype.Service;
 import org.springframework.data.domain.Pageable;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 @Service
 @AllArgsConstructor
@@ -47,5 +49,16 @@ public class WaygService {
                 .fetchResults();
 
         return new PageImpl<>(cate.getResults());
+    }
+
+    public Page<School> locationSchool(String location, Pageable pageable) {
+        QSchool school = QSchool.school;
+        QueryResults loca =jpaQueryFactory.selectFrom(school)
+                .where(school.address.contains(location))
+                .offset(pageable.getOffset())   // (2) 페이지 번호
+                .limit(pageable.getPageSize())
+                .fetchResults();
+
+        return new PageImpl<>(loca.getResults());
     }
 }

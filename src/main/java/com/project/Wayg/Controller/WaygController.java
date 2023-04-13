@@ -4,8 +4,10 @@ import com.project.Wayg.Entity.School;
 import com.project.Wayg.Entity.dto.RequestDTO;
 import com.project.Wayg.Service.WaygService;
 
+import io.swagger.annotations.ApiParam;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
@@ -20,8 +22,10 @@ import java.util.List;
 public class WaygController {
     private final WaygService waygService;
 
-    @GetMapping("/school/info")
-    public ResponseEntity<Page<School>> schoolInfo(@PageableDefault(size=12, direction = Sort.Direction.DESC) Pageable pageable) {
+    @RequestMapping(value="/school/search", method = {RequestMethod.POST, RequestMethod.GET})
+    public ResponseEntity<Page<School>> schoolInfo(@ApiParam(value = "Page number")
+                                                        @RequestParam(defaultValue = "0") int page) {
+        Pageable pageable = PageRequest.of(page-1, 12);
         Page<School> school = waygService.schoolInfo(pageable);
         return ResponseEntity.ok(school);
     }
@@ -29,16 +33,20 @@ public class WaygController {
 
     @RequestMapping(value="/school/search", method = {RequestMethod.POST, RequestMethod.GET})
     public ResponseEntity<Page<School>> searchSchool(@RequestParam RequestDTO keyword,
-                                                     @PageableDefault(size=12, direction = Sort.Direction.DESC) Pageable pageable){
+                                                     @ApiParam(value = "Page number")
+                                                     @RequestParam(defaultValue = "0") int page){
+        Pageable pageable = PageRequest.of(page-1, 12);
         Page<School> search= waygService.searchSchool(keyword, pageable);
         return ResponseEntity.ok(search);
     }
 
-    @RequestMapping(value="/school/category", method={RequestMethod.GET, RequestMethod.POST})
-    public ResponseEntity<Page<School>> categoryType(@RequestParam String category,
-                                                     @PageableDefault(size=12, direction = Sort.Direction.DESC) Pageable pageable){
-        Page<School> categoryType = waygService.categoryType(category, pageable);
-        return ResponseEntity.ok(categoryType);
+    @RequestMapping(value="/school/location", method={RequestMethod.GET, RequestMethod.POST})
+    public ResponseEntity<Page<School>> locationSchool(@RequestParam String location,
+                                                       @ApiParam(value = "Page number")
+                                                       @RequestParam(defaultValue = "0") int page){
+        Pageable pageable = PageRequest.of(page-1, 12);
+        Page<School> locationSchool = waygService.locationSchool(location, pageable);
+        return ResponseEntity.ok(locationSchool);
 
     }
 
