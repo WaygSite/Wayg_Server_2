@@ -3,7 +3,7 @@ package com.project.Wayg.Service;
 import com.project.Wayg.Entity.QSchool;
 import com.project.Wayg.Entity.School;
 import com.project.Wayg.Entity.dto.RequestDTO;
-import com.project.Wayg.Repository.WaygRepository;
+
 import com.querydsl.core.QueryResults;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.AllArgsConstructor;
@@ -12,7 +12,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.stereotype.Service;
 import org.springframework.data.domain.Pageable;
-import java.util.List;
+import com.project.Wayg.repository.WaygRepository;
+
 import java.util.Map;
 import java.util.Objects;
 
@@ -40,10 +41,13 @@ public class WaygService {
     }
 
 
-    public Page<School> categoryType(String category, Pageable pageable) {
+    public Page<School> categoryType(Map<String, Objects> category, Pageable pageable) {
+        String institution = category.get("institution").toString();
+        String schoolType = category.get("schoolType").toString();
+        String manOrWoman= category.get("manOrWoman").toString();
         QSchool school = QSchool.school;
         QueryResults cate =jpaQueryFactory.selectFrom(school)
-                .where(school.address.contains(category))
+                .where(school.institution.eq(institution).and(school.school_type.eq(schoolType)).and(school.gender.eq(manOrWoman)))
                 .offset(pageable.getOffset())   // (2) 페이지 번호
                 .limit(pageable.getPageSize())
                 .fetchResults();

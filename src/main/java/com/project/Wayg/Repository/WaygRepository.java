@@ -1,4 +1,4 @@
-package com.project.Wayg.Repository;
+package com.project.Wayg.repository;
 
 import com.project.Wayg.Entity.School;
 import com.project.Wayg.Entity.dto.RequestDTO;
