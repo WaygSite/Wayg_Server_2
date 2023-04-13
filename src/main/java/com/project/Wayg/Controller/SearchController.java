@@ -2,7 +2,6 @@ package com.project.Wayg.Controller;
 
 import com.project.Wayg.Entity.School;
 import com.project.Wayg.Entity.dto.RequestDTO;
-import com.project.Wayg.repository.WaygRepository;
 import com.project.Wayg.service.SearchService;
 
 import io.swagger.annotations.ApiParam;
@@ -22,7 +21,7 @@ public class SearchController{
     @Autowired
     private final SearchService waygService;
 
-    @RequestMapping(value="/school/info", method = RequestMethod.POST)
+    @RequestMapping(value="/school/info", method = {RequestMethod.POST, RequestMethod.GET})
     public ResponseEntity<Page<School>> schoolInfo(@ApiParam(value = "Page number")
                                                         @RequestParam(defaultValue = "0") int page) {
         Pageable pageable = PageRequest.of(page-1, 12);
