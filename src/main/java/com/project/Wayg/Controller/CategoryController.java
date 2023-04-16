@@ -20,16 +20,6 @@ import java.util.Map;
 public class CategoryController {
     @Autowired
     private final CategoryService categoryService;
-
-    @RequestMapping(value="/school/location", method=RequestMethod.GET)
-    public ResponseEntity<Page<School>> locationSchool(@RequestParam String location,
-                                                       @ApiParam(value = "Page number")
-                                                       @RequestParam(defaultValue = "0") int page){
-        Pageable pageable = PageRequest.of(page-1, 12);
-        Page<School> locationSchool = categoryService.locationSchool(location, pageable);
-        return ResponseEntity.ok(locationSchool);
-
-    }
     @RequestMapping(value="/school/category", method=RequestMethod.GET)
     public ResponseEntity<Page<School>> categoryType(@RequestParam Map<String, Object> category,
                                                      @ApiParam(value = "Page number")
@@ -38,6 +28,4 @@ public class CategoryController {
         Page<School> locationSchool = categoryService.categoryType(category, pageable);
         return ResponseEntity.ok(locationSchool);
     }
-
-
 }

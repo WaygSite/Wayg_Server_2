@@ -8,5 +8,4 @@ import java.util.Map;
 
 public interface CategoryServiceImpl{
     Page<School> categoryType(Map<String, Object> category, Pageable pageable);
-    Page<School> locationSchool(String location, Pageable pageable);
 }

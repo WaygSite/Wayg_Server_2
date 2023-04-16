@@ -27,7 +27,7 @@ public class CategoryService implements CategoryServiceImpl {
         QSchool school = QSchool.school;
         BooleanBuilder builder = new BooleanBuilder();
 
-         new BooleanBuilder();
+        new BooleanBuilder();
         if (!"전체".equals(institution)) {
             builder.and(school.institution.eq(institution));
         }
@@ -41,7 +41,6 @@ public class CategoryService implements CategoryServiceImpl {
             builder.and(school.address.contains(location));
         }
 
-
         QueryResults cate =jpaQueryFactory.selectFrom(school)
                 .where(builder)
                 .offset(pageable.getOffset())
@@ -49,17 +48,6 @@ public class CategoryService implements CategoryServiceImpl {
                 .fetchResults();
 
         return new PageImpl<>(cate.getResults());
-    }
-
-    public Page<School> locationSchool(String location, Pageable pageable) {
-        QSchool school = QSchool.school;
-        QueryResults loca =jpaQueryFactory.selectFrom(school)
-                .where()
-                .offset(pageable.getOffset())   // (2) 페이지 번호
-                .limit(pageable.getPageSize())
-                .fetchResults();
-
-        return new PageImpl<>(loca.getResults());
     }
 
 
