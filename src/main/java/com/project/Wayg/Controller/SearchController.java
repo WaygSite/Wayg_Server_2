@@ -3,9 +3,6 @@ package com.project.Wayg.Controller;
 import com.project.Wayg.Entity.School;
 import com.project.Wayg.Entity.dto.RequestDTO;
 import com.project.Wayg.service.SearchService;
-
-import com.querydsl.core.QueryFactory;
-import com.querydsl.jpa.impl.JPAQuery;
 import io.swagger.annotations.ApiParam;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
