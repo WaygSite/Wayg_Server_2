@@ -19,23 +19,14 @@ import java.util.List;
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("/wayg")
 public class SearchController{
-    @Autowired
     private final SearchService waygService;
 
     @RequestMapping(value="/school/info", method = {RequestMethod.POST, RequestMethod.GET})
     public ResponseEntity<Page<School>> schoolInfo(@ApiParam(value = "Page number")
-                                                        @RequestParam(defaultValue = "0") int page) {
+                                                        @RequestParam(defaultValue = "1") int page,
+                                                        @RequestParam(defaultValue = "0") RequestDTO keyword){
         Pageable pageable = PageRequest.of(page-1, 12);
-        Page<School> school = waygService.schoolInfo(pageable);
+        Page<School> school = waygService.schoolInfo(pageable, keyword);
         return ResponseEntity.ok(school);
     }
-
-
-    @RequestMapping(value="/school/search", method = {RequestMethod.GET})
-    public ResponseEntity<List<School>> searchSchool(@RequestParam RequestDTO keyword){
-        List<School> search= waygService.searchSchool(keyword);
-        return ResponseEntity.ok(search);
-    }
-
-
 }
