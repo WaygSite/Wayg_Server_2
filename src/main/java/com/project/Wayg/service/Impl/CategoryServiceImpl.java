@@ -1,6 +1,6 @@
 package com.project.Wayg.service.Impl;
 
-import com.project.Wayg.Entity.School;
+import com.project.Wayg.entity.School;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

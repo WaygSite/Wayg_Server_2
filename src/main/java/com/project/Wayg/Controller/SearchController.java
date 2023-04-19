@@ -1,18 +1,16 @@
-package com.project.Wayg.Controller;
+package com.project.Wayg.controller;
 
-import com.project.Wayg.Entity.School;
-import com.project.Wayg.Entity.dto.RequestDTO;
+import com.project.Wayg.entity.School;
+import com.project.Wayg.entity.dto.*;
 import com.project.Wayg.service.SearchService;
 import io.swagger.annotations.ApiParam;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.data.domain.Pageable;
 
-import java.util.List;
 
 @RestController
 @RequiredArgsConstructor

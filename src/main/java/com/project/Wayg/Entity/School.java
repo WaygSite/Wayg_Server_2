@@ -1,4 +1,4 @@
-package com.project.Wayg.Entity;
+package com.project.Wayg.entity;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;

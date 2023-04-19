@@ -1,7 +1,7 @@
 package com.project.Wayg.service;
 
-import com.project.Wayg.Entity.QSchool;
-import com.project.Wayg.Entity.School;
+import com.project.Wayg.entity.QSchool;
+import com.project.Wayg.entity.School;
 import com.project.Wayg.service.Impl.CategoryServiceImpl;
 import com.querydsl.core.BooleanBuilder;
 import com.querydsl.core.QueryResults;
@@ -41,14 +41,11 @@ public class CategoryService implements CategoryServiceImpl {
             builder.and(school.address.contains(location));
         }
 
-        QueryResults cate =jpaQueryFactory.selectFrom(school)
-                .where(builder)
+        QueryResults cate =jpaQueryFactory.selectFrom(school).where(builder)
                 .offset(pageable.getOffset())
                 .limit(pageable.getPageSize())
                 .fetchResults();
 
         return new PageImpl<>(cate.getResults());
     }
-
-
 }

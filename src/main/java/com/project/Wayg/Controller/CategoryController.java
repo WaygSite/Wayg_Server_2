@@ -1,6 +1,5 @@
-package com.project.Wayg.Controller;
-
-import com.project.Wayg.Entity.School;
+package com.project.Wayg.controller;
+import com.project.Wayg.entity.School;
 import com.project.Wayg.service.CategoryService;
 import io.swagger.annotations.ApiParam;
 import lombok.RequiredArgsConstructor;

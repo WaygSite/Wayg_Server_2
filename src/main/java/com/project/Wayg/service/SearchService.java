@@ -1,15 +1,11 @@
 package com.project.Wayg.service;
-
-import com.project.Wayg.Entity.QSchool;
-import com.project.Wayg.Entity.School;
-import com.project.Wayg.Entity.dto.RequestDTO;
-
-import com.project.Wayg.config.SwaggerConfiguration;
+import com.project.Wayg.entity.QSchool;
+import com.project.Wayg.entity.School;
+import com.project.Wayg.entity.dto.RequestDTO;
 import com.project.Wayg.service.Impl.SearchServiceImpl;
 import com.querydsl.core.QueryResults;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package com.project.Wayg.Entity.dto;
+package com.project.Wayg.entity.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
