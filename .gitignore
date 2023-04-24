@@ -36,3 +36,9 @@ out/
 
 ### VS Code ###
 .vscode/
+
+
+# Created by .ignore support plugin (hsz.mobi)
+.gradle
+.idea
+application-oauth.properties
