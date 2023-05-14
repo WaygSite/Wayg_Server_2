@@ -21,11 +21,11 @@ public class CategoryController {
     @Autowired
     private final CategoryService categoryService;
     @RequestMapping(value="/school/category", method=RequestMethod.GET)
-    public ResponseEntity<Page<School>> categoryType(Map<String, Object> category,
+    public ResponseEntity<Page<School>> categoryType(@RequestParam(defaultValue = "0") Map<String, Object> category,
                                                      @ApiParam(value = "Page number")
-                                                     @RequestParam(defaultValue = "1") int page,
-                                                     @RequestParam(defaultValue = "0") RequestDTO keyword){
-        Pageable pageable = PageRequest.of(page-1, 12);
+                                                     @RequestParam(defaultValue = "1", required = false) long page,
+                                                     @RequestParam(defaultValue = "0", required = false) RequestDTO keyword){
+        Pageable pageable = PageRequest.of((int)page-1, 12);
         Page<School> locationSchool = categoryService.categoryType(category, pageable, keyword);
         return ResponseEntity.ok(locationSchool);
     }
