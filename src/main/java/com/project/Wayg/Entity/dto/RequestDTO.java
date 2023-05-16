@@ -8,6 +8,5 @@ import lombok.*;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 public class RequestDTO {
-    @Schema(description = "keyword", example = "string")
     private String keyword;
 }
