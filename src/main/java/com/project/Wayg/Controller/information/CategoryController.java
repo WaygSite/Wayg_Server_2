@@ -1,4 +1,4 @@
-package com.project.Wayg.controller;
+package com.project.Wayg.controller.information;
 import com.project.Wayg.controller.dto.request.CategoryRequest;
 import com.project.Wayg.controller.dto.request.KeywordRequest;
 import com.project.Wayg.domain.School;

@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @RequiredArgsConstructor
-@Table(name="school_info")
+@Table(name="school")
 public class School {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
