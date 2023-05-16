@@ -1,4 +1,4 @@
-package com.project.Wayg.entity;
+package com.project.Wayg.domain;
 
 
 import lombok.Getter;

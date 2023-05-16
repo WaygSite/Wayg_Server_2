@@ -1,12 +1,13 @@
-package com.project.Wayg.entity.dto;
+package com.project.Wayg.controller.dto.request;
 
-import io.swagger.v3.oas.annotations.media.Schema;
+
 import lombok.*;
 
 @Getter
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class RequestDTO {
+public class KeywordRequest {
     private String keyword;
 }
+

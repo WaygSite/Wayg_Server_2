@@ -1,15 +1,11 @@
-package com.project.Wayg.entity;
+package com.project.Wayg.domain;
 
-import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.Date;
 
 
 @Entity
