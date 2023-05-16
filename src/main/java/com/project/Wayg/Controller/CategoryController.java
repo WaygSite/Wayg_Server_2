@@ -1,4 +1,5 @@
 package com.project.Wayg.controller;
+import com.project.Wayg.controller.dto.request.CategoryRequest;
 import com.project.Wayg.entity.School;
 import com.project.Wayg.entity.dto.RequestDTO;
 import com.project.Wayg.service.CategoryService;
@@ -21,12 +22,11 @@ public class CategoryController {
     @Autowired
     private final CategoryService categoryService;
     @RequestMapping(value="/school/category", method=RequestMethod.GET)
-    public ResponseEntity<Page<School>> categoryType(@RequestParam(defaultValue = "0") Map<String, Object> category,
-                                                     @ApiParam(value = "Page number")
-                                                     @RequestParam(defaultValue = "1") int page,
-                                                     @RequestParam(defaultValue = "0") RequestDTO keyword){
-        Pageable pageable = PageRequest.of(page-1, 12);
-        Page<School> locationSchool = categoryService.categoryType(category, pageable, keyword);
+    public ResponseEntity<Page<School>> categoryType(@RequestParam(defaultValue = "1") int page,
+                                                     @RequestParam(defaultValue = "0") RequestDTO keyword,
+                                                     CategoryRequest category){
+
+        Page<School> locationSchool = categoryService.categoryType(category, page, keyword);
         return ResponseEntity.ok(locationSchool);
     }
 }
