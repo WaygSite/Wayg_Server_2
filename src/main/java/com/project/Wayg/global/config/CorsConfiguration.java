@@ -1,4 +1,4 @@
-package com.project.Wayg.config;
+package com.project.Wayg.global.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,7 +12,7 @@ public class CorsConfiguration {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**").allowedOrigins("http://localhost:3000").allowedMethods("*");
+                registry.addMapping("/**").allowedOrigins("*").allowedMethods("*");
             }
         };
     }

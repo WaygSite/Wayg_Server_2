@@ -1,4 +1,4 @@
-package com.project.Wayg.domain;
+package com.project.Wayg.info.domain.school;
 
 
 import lombok.Getter;

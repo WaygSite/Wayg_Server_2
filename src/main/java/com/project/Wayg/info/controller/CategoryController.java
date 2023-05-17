@@ -1,8 +1,8 @@
-package com.project.Wayg.controller.information;
-import com.project.Wayg.controller.dto.request.CategoryRequest;
-import com.project.Wayg.controller.dto.request.KeywordRequest;
-import com.project.Wayg.domain.School;
-import com.project.Wayg.service.CategoryService;
+package com.project.Wayg.info.controller;
+import com.project.Wayg.info.dto.request.CategoryRequest;
+import com.project.Wayg.info.dto.request.KeywordRequest;
+import com.project.Wayg.info.domain.school.School;
+import com.project.Wayg.info.service.CategoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:3000", allowedHeaders = "*")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("/wayg")
 public class CategoryController {
     @Autowired

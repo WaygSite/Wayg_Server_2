@@ -1,4 +1,4 @@
-package com.project.Wayg.controller.dto.request;
+package com.project.Wayg.info.dto.request;
 
 import lombok.Getter;
 import lombok.Setter;

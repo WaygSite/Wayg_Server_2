@@ -1,4 +1,4 @@
-package com.project.Wayg.config;
+package com.project.Wayg.global.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

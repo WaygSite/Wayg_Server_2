@@ -1,4 +1,4 @@
-package com.project.Wayg.config;
+package com.project.Wayg.global.config;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import org.springframework.context.annotation.Bean;

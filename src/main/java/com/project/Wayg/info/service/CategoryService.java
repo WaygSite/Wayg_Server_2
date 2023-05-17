@@ -1,10 +1,10 @@
-package com.project.Wayg.service;
+package com.project.Wayg.info.service;
 
-import com.project.Wayg.controller.dto.request.CategoryRequest;
-import com.project.Wayg.controller.dto.request.KeywordRequest;
-import com.project.Wayg.domain.QSchool;
-import com.project.Wayg.domain.School;
-import com.project.Wayg.repository.WaygRepository;
+import com.project.Wayg.info.domain.school.QSchool;
+import com.project.Wayg.info.dto.request.CategoryRequest;
+import com.project.Wayg.info.dto.request.KeywordRequest;
+import com.project.Wayg.info.domain.school.School;
+import com.project.Wayg.info.repository.WaygRepository;
 import com.querydsl.core.BooleanBuilder;
 import com.querydsl.core.QueryResults;
 import com.querydsl.jpa.impl.JPAQueryFactory;

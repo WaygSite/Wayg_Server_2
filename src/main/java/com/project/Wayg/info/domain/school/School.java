@@ -1,18 +1,20 @@
-package com.project.Wayg.domain;
+package com.project.Wayg.info.domain.school;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.swing.*;
+import java.sql.Timestamp;
 import java.time.LocalDate;
 
 
 @Entity
 @Getter
 @Setter
-@RequiredArgsConstructor
-@Table(name="school")
+@NoArgsConstructor
 public class School {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,7 +24,7 @@ public class School {
     private String school_type;
     private String school_name;
     private String address;
-    private LocalDate found_date;
+    private Timestamp found_date;
     private String call_num;
     private String site;
 

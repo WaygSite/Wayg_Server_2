@@ -1,6 +1,6 @@
-package com.project.Wayg.repository;
+package com.project.Wayg.info.repository;
 
-import com.project.Wayg.domain.School;
+import com.project.Wayg.info.domain.school.School;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
