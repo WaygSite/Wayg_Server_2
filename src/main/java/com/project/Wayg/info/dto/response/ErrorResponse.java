@@ -1,6 +1,6 @@
 package com.project.Wayg.info.dto.response;
 
-import com.project.Wayg.info.domain.exception.ErrorCode;
+import com.project.Wayg.global.exception.ErrorCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
