@@ -1,4 +1,4 @@
-package com.project.Wayg.info.dto.request;
+package com.project.Wayg.info.controller.dto.request;
 
 
 import lombok.*;

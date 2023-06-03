@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface WaygRepository extends JpaRepository<School, Integer> {
-
+    School findById(int id);
 }

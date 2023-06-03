@@ -1,8 +1,8 @@
 package com.project.Wayg.info.service;
 
 import com.project.Wayg.info.domain.school.QSchool;
-import com.project.Wayg.info.dto.request.CategoryRequest;
-import com.project.Wayg.info.dto.request.KeywordRequest;
+import com.project.Wayg.info.controller.dto.request.CategoryRequest;
+import com.project.Wayg.info.controller.dto.request.KeywordRequest;
 import com.project.Wayg.info.domain.school.School;
 import com.project.Wayg.info.repository.WaygRepository;
 import com.querydsl.core.BooleanBuilder;
